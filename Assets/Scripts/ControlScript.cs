@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ControlScript : MonoBehaviour
 {
-    
     GameObject[] artObjects = new GameObject[6];
+    
     // Start is called before the first frame update
     void Start()
     {

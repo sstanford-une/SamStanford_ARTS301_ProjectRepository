@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: ../../UNE/ARTS_301/FMOD/SpaceDancer/SpaceDancer.fspro
   sourceBankPath: ..\..\UNE\ARTS_301\FMOD\SpaceDancer\Build

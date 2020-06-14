@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 58042001}
   - component: {fileID: 58042000}
   - component: {fileID: 58042003}
+  - component: {fileID: 58042004}
   m_Layer: 0
-  m_Name: R3
+  m_Name: G2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +226,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1499822063}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &58042004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58041998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/G2
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 22
 --- !u!1 &80506265
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +263,7 @@ GameObject:
   - component: {fileID: 80506269}
   - component: {fileID: 80506268}
   - component: {fileID: 80506267}
+  - component: {fileID: 80506270}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -254,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 80506265}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.010002136, z: -1}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 896361682}
   m_RootOrder: 4
@@ -318,6 +344,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80506265}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &80506270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80506265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Room
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 35
 --- !u!1 &111494367
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +380,6 @@ GameObject:
   - component: {fileID: 111494369}
   - component: {fileID: 111494374}
   - component: {fileID: 111494372}
-  - component: {fileID: 111494368}
   m_Layer: 0
   m_Name: Participant
   m_TagString: Untagged
@@ -339,29 +387,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &111494368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111494367}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/PoC
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 0
-  TriggerOnce: 0
-  Preload: 1
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!23 &111494369
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -415,8 +440,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111494367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 203096976}
   m_Father: {fileID: 0}
@@ -435,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 111494374}
-  speed: 12
+  speed: 5
   gravity: -9.81
   groundCheck: {fileID: 203096976}
   groundDistance: 0.4
@@ -504,8 +529,9 @@ GameObject:
   - component: {fileID: 220530223}
   - component: {fileID: 220530222}
   - component: {fileID: 220530225}
+  - component: {fileID: 220530226}
   m_Layer: 0
-  m_Name: R1
+  m_Name: P4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +622,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 896361677}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &220530226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220530220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/P4
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &280689650
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,8 +660,9 @@ GameObject:
   - component: {fileID: 280689653}
   - component: {fileID: 280689652}
   - component: {fileID: 280689655}
+  - component: {fileID: 280689656}
   m_Layer: 0
-  m_Name: R3
+  m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +753,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 896361677}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &280689656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280689650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/P2
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 22
 --- !u!1 &281433482
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,8 +791,9 @@ GameObject:
   - component: {fileID: 281433485}
   - component: {fileID: 281433484}
   - component: {fileID: 281433487}
+  - component: {fileID: 281433488}
   m_Layer: 0
-  m_Name: R1
+  m_Name: O4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -808,7 +884,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1967783920}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &281433488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281433482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/O4
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &417497752
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +921,7 @@ GameObject:
   - component: {fileID: 417497756}
   - component: {fileID: 417497755}
   - component: {fileID: 417497754}
+  - component: {fileID: 417497757}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -837,7 +938,7 @@ Transform:
   m_GameObject: {fileID: 417497752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.01, z: -1}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1267445684}
   m_RootOrder: 4
@@ -901,6 +1002,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417497752}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &417497757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417497752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Room
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 35
 --- !u!1 &463339000
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,8 +1038,9 @@ GameObject:
   - component: {fileID: 463339003}
   - component: {fileID: 463339002}
   - component: {fileID: 463339005}
+  - component: {fileID: 463339006}
   m_Layer: 0
-  m_Name: R4
+  m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,7 +1131,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 896361677}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &463339006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463339000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/P1
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 30
 --- !u!43 &597358385
 Mesh:
   m_ObjectHideFlags: 0
@@ -1183,8 +1332,9 @@ GameObject:
   - component: {fileID: 700992586}
   - component: {fileID: 700992585}
   - component: {fileID: 700992588}
+  - component: {fileID: 700992589}
   m_Layer: 0
-  m_Name: R3
+  m_Name: O2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1275,7 +1425,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1967783920}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &700992589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700992583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/O2
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 22
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,8 +1853,9 @@ GameObject:
   - component: {fileID: 928440949}
   - component: {fileID: 928440948}
   - component: {fileID: 928440951}
+  - component: {fileID: 928440952}
   m_Layer: 0
-  m_Name: R2
+  m_Name: G3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,7 +1946,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1499822063}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &928440952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928440946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/G3
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 16
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +2027,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1869,7 +2068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77813fd073692f043ad85e948c232080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
   playerBody: {fileID: 111494371}
 --- !u!114 &963194230
 MonoBehaviour:
@@ -1898,8 +2096,9 @@ GameObject:
   - component: {fileID: 1041233767}
   - component: {fileID: 1041233766}
   - component: {fileID: 1041233769}
+  - component: {fileID: 1041233770}
   m_Layer: 0
-  m_Name: R1
+  m_Name: B4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,7 +2189,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1267445679}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1041233770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041233764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/B4
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &1163455589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,8 +2227,9 @@ GameObject:
   - component: {fileID: 1163455592}
   - component: {fileID: 1163455591}
   - component: {fileID: 1163455594}
+  - component: {fileID: 1163455595}
   m_Layer: 0
-  m_Name: R2
+  m_Name: B3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2096,14 +2320,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1267445679}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1163455595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163455589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/B3
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 16
 --- !u!43 &1204632369
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13098
+  m_Name: pb_Mesh13806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5645,8 +5893,9 @@ GameObject:
   - component: {fileID: 1344578612}
   - component: {fileID: 1344578611}
   - component: {fileID: 1344578614}
+  - component: {fileID: 1344578615}
   m_Layer: 0
-  m_Name: R1
+  m_Name: G4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5737,7 +5986,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1499822063}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1344578615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344578609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/G4
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
 --- !u!1 &1389268485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,8 +6024,9 @@ GameObject:
   - component: {fileID: 1389268488}
   - component: {fileID: 1389268487}
   - component: {fileID: 1389268490}
+  - component: {fileID: 1389268491}
   m_Layer: 0
-  m_Name: R3
+  m_Name: B2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5843,7 +6117,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1267445679}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1389268491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389268485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/B2
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 22
 --- !u!1 &1396529331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5856,6 +6154,7 @@ GameObject:
   - component: {fileID: 1396529335}
   - component: {fileID: 1396529334}
   - component: {fileID: 1396529333}
+  - component: {fileID: 1396529336}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -5872,7 +6171,7 @@ Transform:
   m_GameObject: {fileID: 1396529331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.01, z: -1}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1499822068}
   m_RootOrder: 4
@@ -5936,6 +6235,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396529331}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1396529336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396529331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Room
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 35
 --- !u!1 &1499822063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,8 +6526,9 @@ GameObject:
   - component: {fileID: 1582940679}
   - component: {fileID: 1582940678}
   - component: {fileID: 1582940677}
+  - component: {fileID: 1582940680}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6220,7 +6543,7 @@ Transform:
   m_GameObject: {fileID: 1582940675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.010000229, z: -1}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1967783925}
   m_RootOrder: 4
@@ -6284,6 +6607,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582940675}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1582940680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582940675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Room
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 35
 --- !u!1 &1648236676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6297,8 +6643,9 @@ GameObject:
   - component: {fileID: 1648236679}
   - component: {fileID: 1648236678}
   - component: {fileID: 1648236681}
+  - component: {fileID: 1648236682}
   m_Layer: 0
-  m_Name: R4
+  m_Name: G1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6389,7 +6736,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1499822063}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1648236682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648236676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/G1
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 30
 --- !u!1 &1679841998
 GameObject:
   m_ObjectHideFlags: 0
@@ -6403,8 +6774,9 @@ GameObject:
   - component: {fileID: 1679842001}
   - component: {fileID: 1679842000}
   - component: {fileID: 1679842003}
+  - component: {fileID: 1679842004}
   m_Layer: 0
-  m_Name: R2
+  m_Name: P3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6495,7 +6867,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 896361677}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1679842004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679841998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/P3
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 16
 --- !u!43 &1779741112
 Mesh:
   m_ObjectHideFlags: 0
@@ -6672,8 +7068,9 @@ GameObject:
   - component: {fileID: 1781913621}
   - component: {fileID: 1781913620}
   - component: {fileID: 1781913623}
+  - component: {fileID: 1781913624}
   m_Layer: 0
-  m_Name: R4
+  m_Name: O1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6764,7 +7161,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1967783920}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1781913624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781913618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/O1
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 30
 --- !u!1 &1967783920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7034,8 +7455,9 @@ GameObject:
   - component: {fileID: 1971604566}
   - component: {fileID: 1971604565}
   - component: {fileID: 1971604568}
+  - component: {fileID: 1971604569}
   m_Layer: 0
-  m_Name: R2
+  m_Name: O3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7126,7 +7548,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1967783920}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &1971604569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971604563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/O3
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 16
 --- !u!43 &2000398592
 Mesh:
   m_ObjectHideFlags: 0
@@ -7303,8 +7749,9 @@ GameObject:
   - component: {fileID: 2096781070}
   - component: {fileID: 2096781069}
   - component: {fileID: 2096781072}
+  - component: {fileID: 2096781073}
   m_Layer: 0
-  m_Name: R4
+  m_Name: B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7395,4 +7842,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artObject: {fileID: 1267445679}
+  controlScript: {fileID: 793128490}
   active: 0
+--- !u!114 &2096781073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096781067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/B1
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 30
